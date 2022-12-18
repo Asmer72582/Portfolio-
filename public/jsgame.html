@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ASMER CHOUGLE</title>
+	<meta charset="UTF-8">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel='icon' href='img/favicon.png' type='image/x-icon' />
+	<link rel="stylesheet" type="text/css" href="jsstyle.css">
+	<!-- <link rel="stylesheet" type="text/css" href="style.scss"> -->
+	<link rel="stylesheet" type="text/css"
+	  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script data-ad-client="ca-pub-5920054594790730" async
+	  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body>
+
+
+	<div class="container">
+		<!-- <span id="Info"></span> -->
+		<!-- <table border="1px sloid black" style="padding: 20px;">
+			<tr>
+				<td>Win</td>
+				<td>Loss</td>
+				<td>Draw</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>2</td>
+			</tr>
+		</table> -->
+		<div class="main_game">
+			<div class="row">
+				<div class="col-lg-4  col-sm-6 col-md-6 boximg">
+					<h2>User:0</h2>
+					
+				</div>
+				<div class="col-lg-4  col-sm-6 col-md-6 box ">
+					<h3 style="padding-top: 50px;" class="result"></h3>
+
+				</div>
+				<div class="col-lg-4  col-sm-6 col-md-6 box">
+					<h2>Computer:0</h2>
+					
+				</div>
+
+				
+			</div>
+		</div>
+		<div class="buttons">
+
+
+			<button class="btn btn-outline-success hit">Hit</button>
+			<button class="btn btn-outline-warning  stand">stand</button>
+			<button class="btn btn-outline-danger deal">Deal</button>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		const img_user = document.querySelector('.img1');
+		const hitbtn = document.querySelector('.hit');
+		const standbtn = document.querySelector('.stand');
+		const dealbtn = document.querySelector('.deal');
+		const computer = document.querySelector('.img2');
+		const showresult = document.querySelector('.value');
+		const number = 1 + 5;
+
+
+		
+		hitbtn.addEventListener('click', () => {
+			const divimg = document.createElement('img');
+			divimg.src = "img/as.jpg";
+			document.querySelector('.box').appendChild(divimg);
+			
+			console.log(divimg)
+
+			const hitaudio = new Audio("sounds/swish.m4a");
+			hitaudio.play();
+
+		});
+		standbtn.addEventListener('click', () => {
+			const number1 = Math.floor(Math.random() * 21);
+			document.querySelector('.value2').innerHTML = number1;
+			if (number > number1) {
+				document.querySelector('.result').innerHTML = "Win";
+				
+			} else {
+				document.querySelector('.result').innerHTML = "Loose";
+				standaudio = new Audio ("sounds/aww.mp3");
+				standaudio.play();
+			}
+
+		});
+		dealbtn.addEventListener('click', () =>{
+			const yourImages = document.querySelector('.box').querySelectorAll('img');
+			for (i = 0; i < yourImages.length; i++) {
+				yourImages[i].remove();
+			}
+			standaudio = new Audio ("sounds/cash.mp3");
+				standaudio.play();
+		});
+		
+
+
+
+	</script>
+</body>
+
+</html>
